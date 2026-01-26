@@ -6,8 +6,9 @@ eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 return {
 dir: {
 input: "src",
-output: "_site"
+output: "docs"
 },
+pathPrefix: "/historic_glass_museum_foundation/",
 markdownTemplateEngine: "njk",
 htmlTemplateEngine: "njk",
 dataTemplateEngine: "njk"

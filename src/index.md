@@ -20,7 +20,7 @@ Mailing Address:<br>
     Redlands, CA 92375-2395<br><br>
 Hours: <br>Saturday & Sunday<br>Noon-4:00pm<br>
 Admission is by donation.<br><br>
-Contact: <a href="tel:+9097980868">+1 (909) 798-0868</a></p><br><br>
+Contact: <a href="tel:+9097980868">+1 (909) 798-0868</a></p><br>. <br>
 <iframe
   src="https://www.google.com/maps?q=1157+Orange+Street,+Redlands,+CA&output=embed"
   width="250"
