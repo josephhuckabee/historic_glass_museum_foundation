@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body class="">
+    <header class="site-header">
+      <div class="header-inner">
+       <img src="/assets/images/logo.png">
+        <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button>
+        <nav id="primary-nav" class="site-nav" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/about-us/">About</a>
+          <a href="/support-us/">Support Us</a>
+          <a href="/newsletter/">Newsletter</a>
+          <a href="/gift-shop/">Gift Shop</a>
+          <a href="/links/">Our Community</a>
+          <a href="/contact-us/">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="main">
+<img src="/assets/images/glass_museum.jpeg" alt="Interior view of the Historical Glass Museum" />
+</section>
+<section class="index_grid">
+<section class="plan_visit">
+<h2>Plan Your Visit</h2>
+<p>Museum Location:<br>
+1157 Orange Street<br>
+Redlands, California<br><br>
+Mailing Address:<br>
+P. O. Box 9195<br>
+Redlands, CA 92375-2395<br><br>
+Hours: <br>Saturday &amp; Sunday<br>Noon-4:00pm<br>
+Admission is by donation.<br><br>
+Contact: <a href="tel:+9097980868">+1 (909) 798-0868</a></p><br>. <br></p>
+<iframe
+  src="https://www.google.com/maps?q=1157+Orange+Street,+Redlands,+CA&output=embed"
+  width="250"
+  height="150"
+  style="border:0;"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  aria-label="Map showing the location of the Historical Glass Museum at 1157 Orange Street, Redlands, California">
+</iframe>
+<h2>Events</h2>
+<ul>
+<li>Stay tuned for events at the museum</li>
+</ul>
+</section>
+<section class="main_bio">
+<h2>Announcements</h2>
+<p>We have six rooms of glass, including selections of Depression, Elegant, Mid-Century Modern, Carnival, EAPG and Brilliant Cut. We also have a well stocked Gift Shop, where we offer selected items that are either duplicates of our permanent collection, or items donated specifically for sale to support the Museum.</p>
+<p>If you have an interest in a group tour, use the &quot;Contact Us&quot; form on our web site and we may be able to accommodate you. Please be sure to include your contact information.</p>
+<h2>Featured Collections</h2>
+<div class="featured_cards">
+<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+</div>
+</section>
+</section>
+
+    </main>
+
+    <footer>
+     <p>&copy; 2026 Historical Glass Museum</p>
+     </footer>
+    <script>
+      (() => {
+        const header = document.querySelector('.site-header');
+        const btn = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('#primary-nav');
+        if (!header || !btn || !nav) return;
+
+        const close = () => {
+          header.removeAttribute('data-nav-open');
+          btn.setAttribute('aria-expanded', 'false');
+        };
+
+        btn.addEventListener('click', () => {
+          const open = header.getAttribute('data-nav-open') === 'true';
+          if (open) {
+            close();
+          } else {
+            header.setAttribute('data-nav-open', 'true');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') close();
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.matchMedia('(min-width: 600px)').matches) close();
+        });
+      })();
+    </script>
+  </body>
+</html>
