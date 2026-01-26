@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gift Shop</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body class="gift-shop">
+    <header class="site-header">
+      <div class="header-inner">
+       <img src="/assets/images/logo.png">
+        <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button>
+        <nav id="primary-nav" class="site-nav" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/about-us/">About</a>
+          <a href="/support-us/">Support Us</a>
+          <a href="/newsletter/">Newsletter</a>
+          <a href="/gift-shop/">Gift Shop</a>
+          <a href="/links/">Our Community</a>
+          <a href="/contact-us/">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h2>About the shop</h2>
+<ul>
+<li>
+<p>There is an exciting new look to the Historical Glass Museum Gift Shop with its array of fine collectibles and unique gifts for young and old.</p>
+</li>
+<li>
+<p>We stock the Gift Shop with items that have been donated, either for the specific purpose of being sold in the Gift Shop to support the Museum, or because they duplicate or excess items that we already have in the Museum collection. In either case, we have a fairly constant supply of new merchandise for you to consider.</p>
+</li>
+<li>
+<p>Our Fenton Art Glass section has been an ongoing success for collectors and visitors seeking &quot;that special gift that is sure to please.&quot; We try to bring &quot;fresh finds&quot; to keep our customers happy.</p>
+</li>
+<li>
+<p>We also offer a nice selection of used Glass Reference books.</p>
+</li>
+<li>
+<p>Visit this site often, as we periodically have 30% off sales in the Gift Shop. They offer you a chance to buy some nice gifts for friends, family (or yourself).</p>
+</li>
+<li>
+<p>The Gift Shop is open during Museum Hours: 12 noon to 4 p.m., Saturday and Sunday.</p>
+</li>
+</ul>
+<h2>Giftshop Items</h2>
+<section class="giftshop_grid">
+<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+</section>
+    </main>
+
+    <footer>
+     <p>&copy; 2026 Historical Glass Museum</p>
+     </footer>
+    <script>
+      (() => {
+        const header = document.querySelector('.site-header');
+        const btn = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('#primary-nav');
+        if (!header || !btn || !nav) return;
+
+        const close = () => {
+          header.removeAttribute('data-nav-open');
+          btn.setAttribute('aria-expanded', 'false');
+        };
+
+        btn.addEventListener('click', () => {
+          const open = header.getAttribute('data-nav-open') === 'true';
+          if (open) {
+            close();
+          } else {
+            header.setAttribute('data-nav-open', 'true');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') close();
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.matchMedia('(min-width: 600px)').matches) close();
+        });
+      })();
+    </script>
+  </body>
+</html>
