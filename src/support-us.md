@@ -6,7 +6,7 @@ The museum operates entirely through the dedication of volunteers and the genero
 
 <div class="accordion" data-accordion>
   <details class="accordion__item">
-    <summary class="accordion__summary"><img src="/assets/images/volu.png"><h2>Volunteering</h2></summary>
+    <summary class="accordion__summary"><img src="{{ '/assets/images/volu.png' | url }}"><h2>Volunteering</h2></summary>
     <div class="accordion__panel">
 
       <h3>Board Members</h3>
@@ -46,7 +46,7 @@ The museum operates entirely through the dedication of volunteers and the genero
   </details>
 
   <details class="accordion__item">
-    <summary class="accordion__summary"><img src="/assets/images/membership.png"><h2>Membership</h2></summary>
+    <summary class="accordion__summary"><img src="{{ '/assets/images/membership.png' | url }}"><h2>Membership</h2></summary>
     <div class="accordion__panel">
 
       <p>
@@ -79,7 +79,7 @@ The museum operates entirely through the dedication of volunteers and the genero
   </details>
 
   <details class="accordion__item">
-    <summary class="accordion__summary"><img src="/assets/images/volunteer.png"><h2>Donations</h2></summary>
+    <summary class="accordion__summary"><img src="{{ '/assets/images/volunteer.png' | url }}"><h2>Donations</h2></summary>
     <div class="accordion__panel">
 
       <p>

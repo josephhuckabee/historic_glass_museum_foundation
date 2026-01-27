@@ -43,10 +43,10 @@ The Historical Glass Museum Foundation was founded in 1976 by Dixie Huckabee, an
 <br><br>
 <div class="video_tours">
 <div>
-Inlands Explorer Tour Video <br> <img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+Inlands Explorer Tour Video <br> <img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
 </div>
 <div>
-1995 Huell Howser Video <br> <img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+1995 Huell Howser Video <br> <img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
 </div>
 </div>
 </section>

@@ -14,10 +14,10 @@ layout: layouts/base.njk
 - The Gift Shop is open during Museum Hours: 12 noon to 4 p.m., Saturday and Sunday. 
 ## Giftshop Items
 <section class="giftshop_grid">
-<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
-<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
-<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
-<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
-<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
-<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+<img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
+<img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
+<img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
+<img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
+<img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
+<img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
 </section>

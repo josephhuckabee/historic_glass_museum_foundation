@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us</title>
+<link rel="stylesheet" href="/historic_glass_museum_foundation/assets/css/main.css">
+</head>
+  <body class="about-us">
+    <header class="site-header">
+      <div class="header-inner">
+        <img class="site-logo" src="/historic_glass_museum_foundation/assets/images/logo.png" alt="Historical Glass Museum Foundation logo">
+        <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button>
+        <nav id="primary-nav" class="site-nav" aria-label="Primary">
+          <a href="/historic_glass_museum_foundation/">Home</a>
+          <a href="/historic_glass_museum_foundation/about-us/">About</a>
+          <a href="/historic_glass_museum_foundation/support-us/">Support Us</a>
+          <a href="/historic_glass_museum_foundation/newsletter/">Newsletter</a>
+          <a href="/historic_glass_museum_foundation/gift-shop/">Gift Shop</a>
+          <a href="/historic_glass_museum_foundation/links/">Our Community</a>
+          <a href="/historic_glass_museum_foundation/contact-us/">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="about_main">
+<section class="about_people">
+<p><b>Founder</b><br>
+Dixie Huckabee
+<br><br>
+<b>CURRENT BOARD OF DIRECTORS</b> <br>
+President: Michael Krumme<br>
+Vice President: [open]<br>
+Secretary: Michael Krumme<br>
+Treasurer:Marco Valderrama (<em>)<br>
+Board Member: William Brakemeyer<br>
+Board Member David Adams<br>
+Board Member Doreen Ward<br>
+Board Member: Barbara Jenks<br>
+Board Member: Kathi Jablonsky<br>
+Board Member: Andy Hoder<br>
+Board Member: Monica Barragan<br>
+(</em>) Paid Consultant performing some duties of Treasurer<br></p>
+<p><b>Past Presidents </b>
+<br>
+Leonard Hanson,1976-1985<br>
+Dixie Huckabee, 1985-1988<br>
+David M. Laird, 1988-1989<br>
+Dixie Huckabee, 1989-1991<br>
+Sue Moore, 1991-1995<br>
+Barbara Smith, 1996-2004<br>
+Frank Herendeen, 2004-2012<br>
+Bill Brakemeyer, 2013<br>
+Joann Tortarolo, 2013-2018<br>
+Steve Barnett 2018 - 2023<br>
+Michael Krumme 2024<br></p>
+</section>
+<section class="about_museum">
+<h2>About the Museum</h2>
+<p>The Historical Glass Museum Foundation was founded in 1976 by Dixie Huckabee, and a group of interested glass collectors. In 1977 the Foundation purchased a 1903 Victorian-style home at 1157 North Orange Street in the  Museum exteriorpicturesque city of Redlands. It was the beginning of a dream to preserve specimens of American glass from factories that were becoming extinct, as well as factories and glass artists currently producing glass. It took the Foundation nine years of hard work and fundraising to open the Historical Glass Museum to the public in 1985. The Museum now houses the largest collection of American-made glass west of the Rocky Mountains.
+<br><br></p>
+<div class="video_tours">
+<div>
+Inlands Explorer Tour Video <br> <img src="/historic_glass_museum_foundation/assets/images/2025FoatoriaCoinPunch.jpg">
+</div>
+<div>
+1995 Huell Howser Video <br> <img src="/historic_glass_museum_foundation/assets/images/2025FoatoriaCoinPunch.jpg">
+</div>
+</div>
+</section>
+</section>
+
+    </main>
+
+    <footer>
+     <p>&copy; 2026 Historical Glass Museum</p>
+     </footer>
+    <script>
+      (() => {
+        const header = document.querySelector('.site-header');
+        const btn = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('#primary-nav');
+        if (!header || !btn || !nav) return;
+
+        const close = () => {
+          header.removeAttribute('data-nav-open');
+          btn.setAttribute('aria-expanded', 'false');
+        };
+
+        btn.addEventListener('click', () => {
+          const open = header.getAttribute('data-nav-open') === 'true';
+          if (open) {
+            close();
+          } else {
+            header.setAttribute('data-nav-open', 'true');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') close();
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.matchMedia('(min-width: 600px)').matches) close();
+        });
+      })();
+    </script>
+  </body>
+</html>

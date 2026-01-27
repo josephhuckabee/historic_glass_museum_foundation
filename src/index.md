@@ -4,7 +4,7 @@ layout: layouts/base.njk
 ---
 
 <section class="main">
-<img src="/assets/images/glass_museum.jpeg" alt="Interior view of the Historical Glass Museum" />
+<img src="{{ '/assets/images/glass_museum.jpeg' | url }}" alt="Interior view of the Historical Glass Museum" />
 
 </section>
 <section class="index_grid">
@@ -47,7 +47,7 @@ If you have an interest in a group tour, use the "Contact Us" form on our web si
 
 ## Featured Collections
 <div class="featured_cards">
-<img src="/assets/images/2025FoatoriaCoinPunch.jpg">
+<img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
 </div>
 
 </section>
