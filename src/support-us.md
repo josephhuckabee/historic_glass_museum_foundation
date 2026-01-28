@@ -2,11 +2,12 @@
 title: Support the Museum
 layout: layouts/base.njk
 ---
-The museum operates entirely through the dedication of volunteers and the generosity of donations. Community support allows us to preserve, study, and share the history of glassmaking with the public. Visitors are invited to take part in the museum’s mission by volunteering, becoming a member, or making a donation to support our ongoing efforts.<br><br>
+<div class="page-centered">
+The museum operates entirely through the dedication of volunteers and the generosity of donations. Community support allows us to preserve, study, and share the history of glassmaking with the public. Visitors are invited to take part in the museum’s mission by volunteering, becoming a member, or making a donation to support our ongoing efforts.
 
 <div class="accordion" data-accordion>
   <details class="accordion__item">
-    <summary class="accordion__summary"><img src="{{ '/assets/images/volu.png' | url }}"><h2>Volunteering</h2></summary>
+    <summary class="accordion__summary"><img src="{{ '/assets/images/volu.png' | url }}" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="accordion__title">Volunteering</span></summary>
     <div class="accordion__panel">
 
       <h3>Board Members</h3>
@@ -46,7 +47,7 @@ The museum operates entirely through the dedication of volunteers and the genero
   </details>
 
   <details class="accordion__item">
-    <summary class="accordion__summary"><img src="{{ '/assets/images/membership.png' | url }}"><h2>Membership</h2></summary>
+    <summary class="accordion__summary"><img src="{{ '/assets/images/membership.png' | url }}" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="accordion__title">Membership</span></summary>
     <div class="accordion__panel">
 
       <p>
@@ -79,7 +80,7 @@ The museum operates entirely through the dedication of volunteers and the genero
   </details>
 
   <details class="accordion__item">
-    <summary class="accordion__summary"><img src="{{ '/assets/images/volunteer.png' | url }}"><h2>Donations</h2></summary>
+    <summary class="accordion__summary"><img src="{{ '/assets/images/volunteer.png' | url }}" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="accordion__title">Donations</span></summary>
     <div class="accordion__panel">
 
       <p>
@@ -103,4 +104,5 @@ The museum operates entirely through the dedication of volunteers and the genero
     </div>
   </details>
 
+</div>
 </div>

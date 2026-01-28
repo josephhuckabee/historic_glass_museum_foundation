@@ -3,7 +3,7 @@ title: About Us
 layout: layouts/base.njk
 ---
 <section class="about_main">
-<section class="about_people">
+<section class="about_people left-column">
 
 <b>Founder</b><br>
 Dixie Huckabee
@@ -12,7 +12,7 @@ Dixie Huckabee
 President: Michael Krumme<br>
 Vice President: [open]<br>
 Secretary: Michael Krumme<br>
-Treasurer:Marco Valderrama (*)<br>
+Treasurer: Marco Valderrama (*)<br>
 Board Member: William Brakemeyer<br>
 Board Member David Adams<br>
 Board Member Doreen Ward<br>
@@ -38,15 +38,15 @@ Board Member: Monica Barragan<br>
 </section>
 <section class="about_museum">
 
-## About the Museum
-The Historical Glass Museum Foundation was founded in 1976 by Dixie Huckabee, and a group of interested glass collectors. In 1977 the Foundation purchased a 1903 Victorian-style home at 1157 North Orange Street in the  Museum exteriorpicturesque city of Redlands. It was the beginning of a dream to preserve specimens of American glass from factories that were becoming extinct, as well as factories and glass artists currently producing glass. It took the Foundation nine years of hard work and fundraising to open the Historical Glass Museum to the public in 1985. The Museum now houses the largest collection of American-made glass west of the Rocky Mountains.
+<h2>About the Museum</h2>
+The Historical Glass Museum Foundation was founded in 1976 by Dixie Huckabee and a group of interested glass collectors. In 1977 the Foundation purchased a 1903 Victorian-style home at 1157 North Orange Street in the picturesque city of Redlands. It was the beginning of a dream to preserve specimens of American glass from factories that were becoming extinct, as well as factories and glass artists currently producing glass. It took the Foundation nine years of hard work and fundraising to open the Historical Glass Museum to the public in 1985. The Museum now houses the largest collection of American-made glass west of the Rocky Mountains.
 <br><br>
 <div class="video_tours">
 <div>
-Inlands Explorer Tour Video <br> <img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
+Inlands Explorer Tour Video <br> <img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}" alt="Foatoria coin punch glass bowl still from the Inlands Explorer tour" loading="lazy" decoding="async">
 </div>
 <div>
-1995 Huell Howser Video <br> <img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}">
+1995 Huell Howser Video <br> <img src="{{ '/assets/images/2025FoatoriaCoinPunch.jpg' | url }}" alt="Foatoria coin punch glass bowl still from the 1995 Huell Howser segment" loading="lazy" decoding="async">
 </div>
 </div>
 </section>
