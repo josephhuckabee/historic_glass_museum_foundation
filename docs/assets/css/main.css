@@ -226,6 +226,17 @@ header nav {
   }
 }
 
+@media (max-width: 700px) {
+  .accordion.columns-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .accordion-link {
+    width: 120px;
+    height: 120px;
+  }
+}
+
 main,
 footer {
 width: 100%;
@@ -556,6 +567,53 @@ width: 100%;
 max-width: 400px;
 margin-inline: auto;
 margin-top: 1.5rem;
+gap: 0.75rem;
+justify-items: stretch;
+}
+
+.accordion.columns-3 {
+  max-width: 1200px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.accordion-column {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.accordion-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  margin: 0;
+  padding: 0.8rem;
+  background: linear-gradient(180deg, #2a82c9, #1b6fb4);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 2px 0 rgba(10, 34, 56, 0.35),
+    0 10px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.accordion__item {
+  width: 100%;
+}
+
+.support-us .nav-cta {
+  display: none;
+}
+
+.accordion-link:hover,
+.accordion-link:focus-visible {
+  background: linear-gradient(180deg, #2f8ad8, #145a90);
+  color: #ffffff;
 }
 
 .accordion__item {

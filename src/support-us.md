@@ -5,8 +5,10 @@ layout: layouts/base.njk
 <div class="page-centered">
 The museum operates entirely through the dedication of volunteers and the generosity of donations. Community support allows us to preserve, study, and share the history of glassmaking with the public. Visitors are invited to take part in the museum’s mission by volunteering, becoming a member, or making a donation to support our ongoing efforts.
 
-<div class="accordion" data-accordion>
-  <details class="accordion__item">
+<div class="accordion columns-3" data-accordion>
+  <div class="accordion-column">
+    <a class="accordion-link" href="#" target="_blank" rel="noopener">Volunteer Signup</a>
+    <details class="accordion__item">
     <summary class="accordion__summary"><img src="{{ '/assets/images/volu.png' | url }}" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="accordion__title">Volunteering</span></summary>
     <div class="accordion__panel">
 
@@ -44,9 +46,12 @@ The museum operates entirely through the dedication of volunteers and the genero
       </p>
 
     </div>
-  </details>
+    </details>
+  </div>
 
-  <details class="accordion__item">
+  <div class="accordion-column">
+    <a class="accordion-link" href="#" target="_blank" rel="noopener">Membership Purchase</a>
+    <details class="accordion__item">
     <summary class="accordion__summary"><img src="{{ '/assets/images/membership.png' | url }}" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="accordion__title">Membership</span></summary>
     <div class="accordion__panel">
 
@@ -77,9 +82,12 @@ The museum operates entirely through the dedication of volunteers and the genero
       </p>
 
     </div>
-  </details>
+    </details>
+  </div>
 
-  <details class="accordion__item">
+  <div class="accordion-column">
+    <a class="accordion-link" href="#" target="_blank" rel="noopener">Donations</a>
+    <details class="accordion__item">
     <summary class="accordion__summary"><img src="{{ '/assets/images/volunteer.png' | url }}" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="accordion__title">Donations</span></summary>
     <div class="accordion__panel">
 
@@ -102,7 +110,8 @@ The museum operates entirely through the dedication of volunteers and the genero
       </p>
 
     </div>
-  </details>
+    </details>
+  </div>
 
 </div>
 </div>
