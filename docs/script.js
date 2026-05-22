@@ -77,8 +77,7 @@
   };
 
   const initMembershipModal = () => {
-    const isSubpage = location.pathname.split("/").filter(Boolean).length > 1;
-    const supportHref = isSubpage ? "../support-us/" : "support-us/";
+    const supportHref = "support-us.html";
 
     document.body.insertAdjacentHTML(
       "beforeend",
