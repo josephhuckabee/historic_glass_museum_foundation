@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "eleventy --serve"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "start": "python3 -m http.server 8091 --bind 127.0.0.1 --directory docs"
   }
 }
