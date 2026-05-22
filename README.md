@@ -12,12 +12,16 @@ This is a simple static website. There is no build step.
 - `docs/contact-us.html` - contact page
 - `docs/privacy.html` - privacy, accessibility, donation, and nonprofit notes
 - `docs/404.html` - fallback page for broken links
+- `docs/robots.txt` - crawler instructions and sitemap location
+- `docs/sitemap.xml` - search engine sitemap
+- `docs/llms.txt` - plain-text site summary for AI tools and maintainers
 - `docs/styles.css` - all site styles
 - `docs/script.js` - mobile menu, newsletter tabs, and membership modal
 - `docs/images/` - site images
 
 ## Before Publishing
 
+- If the site uses a custom domain, update the canonical URLs, `docs/sitemap.xml`, `docs/robots.txt`, and `docs/llms.txt`.
 - Have the Foundation review `docs/privacy.html` before launch.
 - Replace or add photos only in `docs/images/`, then update the matching image paths in the HTML.
 - Keep the site static unless the Foundation is ready to maintain forms, donations, analytics, or newsletter tools.
