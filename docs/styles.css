@@ -197,6 +197,11 @@ main {
   margin-inline: auto;
 }
 
+.site-footer a {
+  color: var(--blue-dark);
+  font-weight: 750;
+}
+
 .site-credit {
   margin-bottom: 0;
   color: #6f747b;
@@ -354,6 +359,10 @@ address {
   margin-top: 0.55rem;
   background: var(--gold);
   content: "";
+}
+
+.legal-content h2:not(:first-child) {
+  margin-top: 1.4rem;
 }
 
 .visit-card {
