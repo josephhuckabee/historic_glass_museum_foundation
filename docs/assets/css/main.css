@@ -110,6 +110,7 @@ a:hover {
 
 .site-logo {
   filter: drop-shadow(0 7px 14px rgba(0, 0, 0, 0.24));
+  transform: translateY(0.18rem);
 }
 
 .nav-toggle {
@@ -546,6 +547,7 @@ address {
   .site-logo {
     width: 15rem;
     height: auto;
+    transform: none;
   }
 
   .nav-toggle {
