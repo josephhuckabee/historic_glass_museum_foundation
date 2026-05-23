@@ -7,7 +7,7 @@
     <title>Page Not Found | Historical Glass Museum</title>
     <script>
       (() => {
-        const legacyPages = new Set(["about-us", "support-us", "newsletter", "gift-shop", "contact-us"]);
+        const legacyPages = new Set(["about-us", "support-us", "newsletter", "gift-shop", "gallery", "resources", "contact-us"]);
         const match = window.location.pathname.match(/\/([^/]+)\/?$/);
 
         if (match && legacyPages.has(match[1])) {
@@ -112,6 +112,8 @@
           <a href="support-us.html">Support</a>
           <a href="newsletter.html">Newsletter</a>
           <a href="gift-shop.html">Gift Shop</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="resources.html">Resources</a>
           <a href="contact-us.html">Contact</a>
         </nav>
       </div>

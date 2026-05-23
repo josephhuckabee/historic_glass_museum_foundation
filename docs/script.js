@@ -132,9 +132,21 @@
     });
   };
 
+  const initHashDetails = () => {
+    const openHashedDetails = () => {
+      if (!window.location.hash) return;
+      const target = document.querySelector(window.location.hash);
+      if (target?.matches("details")) target.open = true;
+    };
+
+    openHashedDetails();
+    window.addEventListener("hashchange", openHashedDetails);
+  };
+
   const init = () => {
     initNav();
     initNewsletter();
+    initHashDetails();
     initMembershipModal();
   };
 

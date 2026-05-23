@@ -325,7 +325,8 @@ address {
 .newsletter-grid,
 .gallery-grid,
 .video-tours,
-.accordion {
+.accordion,
+.archive-list {
   display: grid;
   gap: 1.15rem;
 }
@@ -334,8 +335,22 @@ address {
 .newsletter-grid,
 .accordion,
 .gallery-grid,
+.notice-band,
 .page-intro {
   margin-block: 1rem;
+}
+
+.notice-band {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid var(--blue-dark);
+  background: var(--paper-soft);
+}
+
+.notice-band h2 {
+  margin-bottom: 0.45rem;
 }
 
 .panel {
@@ -395,8 +410,26 @@ address {
 
 .people-list ul,
 .giftshop-content ul,
-.accordion-panel ul {
+.accordion-panel ul,
+.feature-list {
   padding-left: 1.2rem;
+}
+
+.feature-list {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.archive-list {
+  grid-template-columns: 1fr;
+}
+
+.archive-list ul {
+  padding-left: 1.2rem;
+}
+
+.archive-list section {
+  min-width: 0;
 }
 
 .accordion-item {
@@ -564,6 +597,7 @@ address {
   .site-nav {
     grid-column: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 0.15rem;
@@ -573,8 +607,9 @@ address {
 
   .site-nav a {
     min-height: 2.5rem;
-    padding: 0.5rem 0.65rem;
+    padding: 0.5rem 0.42rem;
     border-bottom: 2px solid transparent;
+    font-size: 0.94rem;
   }
 
   .site-nav a:hover,
@@ -600,6 +635,10 @@ address {
     align-items: start;
   }
 
+  .notice-band {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
   .hero {
     align-items: center;
     gap: 2rem;
@@ -617,6 +656,10 @@ address {
   .gallery-grid,
   .video-tours {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .archive-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .membership-float {
@@ -644,7 +687,7 @@ address {
 
   .brand,
   .site-logo {
-    width: 18rem;
+    width: 13rem;
     height: auto;
   }
 
@@ -658,6 +701,11 @@ address {
 
   .gallery-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .three-column {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
   }
 
   .panel {

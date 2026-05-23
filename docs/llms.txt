@@ -11,6 +11,8 @@ Key pages:
 - Support, membership, volunteering, and donations: https://josephhuckabee.github.io/historic_glass_museum_foundation/support-us.html
 - Newsletter: https://josephhuckabee.github.io/historic_glass_museum_foundation/newsletter.html
 - Gift Shop: https://josephhuckabee.github.io/historic_glass_museum_foundation/gift-shop.html
+- Gallery: https://josephhuckabee.github.io/historic_glass_museum_foundation/gallery.html
+- Resources: https://josephhuckabee.github.io/historic_glass_museum_foundation/resources.html
 - Contact: https://josephhuckabee.github.io/historic_glass_museum_foundation/contact-us.html
 - Privacy and legal information: https://josephhuckabee.github.io/historic_glass_museum_foundation/privacy.html
 
