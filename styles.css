@@ -3,16 +3,20 @@
   --blue: #176fae;
   --blue-dark: #0f3f66;
   --blue-deep: #0a2f4f;
+  --blue-quiet: #e8f2f8;
   --paper: #ffffff;
   --paper-soft: #f5f5f2;
+  --paper-warm: #fbfaf6;
   --white: #ffffff;
   --ink: #111111;
   --muted: #555555;
   --red: #9a2f28;
   --gold: #a57518;
+  --gold-soft: #f4e5c4;
   --border: #d8d8d2;
   --focus: #ffd166;
   --shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 18px 45px rgba(10, 47, 79, 0.12);
 }
 
 *,
@@ -33,7 +37,9 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--ink);
-  background: var(--paper);
+  background:
+    linear-gradient(90deg, rgba(23, 111, 174, 0.06), transparent 18%, transparent 82%, rgba(165, 117, 24, 0.07)),
+    var(--paper-warm);
 }
 
 img,
@@ -82,9 +88,9 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--blue);
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue) 54%, #1b7fb8);
   border-bottom: 4px solid var(--blue-deep);
-  box-shadow: none;
+  box-shadow: 0 12px 30px rgba(10, 47, 79, 0.16);
 }
 
 .header-inner {
@@ -166,6 +172,7 @@ a:hover {
   font-weight: 750;
   text-align: center;
   text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
 .site-nav a:hover,
@@ -184,6 +191,7 @@ main,
 main {
   padding: 1rem;
   background: var(--paper);
+  box-shadow: 0 0 0 1px rgba(216, 216, 210, 0.55);
 }
 
 .site-footer {
@@ -255,11 +263,23 @@ address {
   display: grid;
   gap: 1.25rem;
   padding: 1.15rem 0 2rem;
-  border-bottom: 2px solid var(--ink);
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-media {
   position: relative;
+  isolation: isolate;
+}
+
+.hero-media::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.36), transparent 22%, transparent 68%, rgba(255, 255, 255, 0.18)),
+    linear-gradient(0deg, rgba(10, 47, 79, 0.14), transparent 42%);
+  content: "";
 }
 
 .hero-media img {
@@ -267,7 +287,8 @@ address {
   aspect-ratio: 1.35 / 1;
   object-fit: cover;
   border-radius: 0;
-  box-shadow: none;
+  border: 1px solid rgba(10, 47, 79, 0.18);
+  box-shadow: var(--shadow-soft);
 }
 
 .hero-copy,
@@ -282,7 +303,7 @@ address {
 
 .eyebrow {
   margin-bottom: 0.45rem;
-  color: var(--blue-dark);
+  color: var(--gold);
   font-size: 0.76rem;
   font-weight: 850;
   letter-spacing: 0.06em;
@@ -306,14 +327,18 @@ address {
   border-radius: 0;
   background: var(--ink);
   color: #ffffff;
+  box-shadow: 4px 4px 0 var(--gold-soft);
   font-weight: 850;
   text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
 .button:hover {
   background: var(--blue-dark);
   border-color: var(--blue-dark);
   color: #ffffff;
+  box-shadow: 2px 2px 0 var(--gold-soft);
+  transform: translate(2px, 2px);
 }
 
 .button-secondary {
@@ -337,7 +362,7 @@ address {
 .gallery-grid,
 .notice-band,
 .page-intro {
-  margin-block: 1rem;
+  margin-block: 1.25rem;
 }
 
 .notice-band {
@@ -345,17 +370,60 @@ address {
   gap: 1rem;
   align-items: center;
   padding: 1rem;
-  border: 2px solid var(--blue-dark);
-  background: var(--paper-soft);
+  border: 1px solid rgba(15, 63, 102, 0.32);
+  border-left: 0.45rem solid var(--gold);
+  background: linear-gradient(135deg, var(--blue-quiet), var(--paper-soft));
+  box-shadow: 0 10px 25px rgba(10, 47, 79, 0.08);
 }
 
 .notice-band h2 {
   margin-bottom: 0.45rem;
 }
 
+.section-heading {
+  padding-block: 0.25rem;
+}
+
+.section-heading h2 {
+  margin-bottom: 0;
+}
+
+.announcement-grid {
+  padding: 1rem;
+  border-top: 0.35rem solid var(--gold);
+  background:
+    linear-gradient(135deg, rgba(232, 242, 248, 0.82), rgba(255, 255, 255, 0.94)),
+    var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.announcement-card {
+  display: grid;
+  gap: 0.45rem;
+  align-content: start;
+  padding: 1rem;
+  border: 1px solid rgba(15, 63, 102, 0.22);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.announcement-card h3,
+.announcement-card p {
+  margin-bottom: 0;
+}
+
+.event-date {
+  width: fit-content;
+  padding: 0.22rem 0.5rem;
+  background: var(--blue-deep);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
 .panel {
   padding: 1rem 0;
-  border-top: 2px solid var(--ink);
+  border-top: 1px solid var(--border);
   border-right: 0;
   border-bottom: 0;
   border-left: 0;
@@ -366,10 +434,10 @@ address {
 
 .panel h2::after {
   display: block;
-  width: 3rem;
+  width: 3.4rem;
   height: 2px;
   margin-top: 0.55rem;
-  background: var(--blue);
+  background: linear-gradient(90deg, var(--blue), var(--gold));
   content: "";
 }
 
@@ -379,7 +447,10 @@ address {
 
 .visit-card {
   padding: 1rem;
-  border: 2px solid var(--blue);
+  border: 1px solid rgba(23, 111, 174, 0.42);
+  border-top: 0.35rem solid var(--blue);
+  background: linear-gradient(180deg, var(--white), var(--paper-soft));
+  box-shadow: var(--shadow-soft);
 }
 
 .map-embed {
@@ -396,6 +467,7 @@ address {
   border: 1px solid var(--border);
   border-radius: 0;
   background: var(--paper-soft);
+  box-shadow: 0 12px 28px rgba(10, 47, 79, 0.1);
 }
 
 .video-tours figure {
@@ -434,10 +506,11 @@ address {
 
 .accordion-item {
   overflow: clip;
-  border: 2px solid var(--ink);
+  border: 1px solid var(--border);
+  border-top: 0.25rem solid var(--blue);
   border-radius: 0;
   background: var(--white);
-  box-shadow: none;
+  box-shadow: 0 10px 24px rgba(10, 47, 79, 0.07);
 }
 
 .accordion-item summary {
@@ -480,7 +553,8 @@ address {
 
 .newsletter-date {
   min-height: 2.75rem;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
+  border-left: 0.25rem solid transparent;
   border-radius: 0;
   background: var(--white);
   color: var(--ink);
@@ -493,7 +567,8 @@ address {
 .newsletter-date:hover,
 .newsletter-date:focus-visible,
 .newsletter-date.is-active {
-  border-color: var(--ink);
+  border-color: var(--blue-dark);
+  border-left-color: var(--gold);
   background: var(--paper-soft);
 }
 
@@ -639,6 +714,11 @@ address {
     grid-template-columns: minmax(0, 1fr) auto;
   }
 
+  .announcement-grid {
+    grid-template-columns: 0.8fr 1fr 1fr;
+    align-items: stretch;
+  }
+
   .hero {
     align-items: center;
     gap: 2rem;
@@ -662,13 +742,17 @@ address {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .membership-float {
-    right: 1.5rem;
-    bottom: 1.5rem;
-  }
-
   .membership-modal {
     padding: 1.5rem;
+  }
+
+  .membership-float {
+    display: flex;
+    position: static;
+    width: fit-content;
+    margin: 0 auto 1.5rem;
+    border-color: var(--red);
+    box-shadow: none;
   }
 }
 
