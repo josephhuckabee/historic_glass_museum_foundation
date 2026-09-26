@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://josephhuckabee.github.io/sitemap.xml
+Sitemap: https://josephhuckabee.github.io/historic_glass_museum_foundation/sitemap.xml

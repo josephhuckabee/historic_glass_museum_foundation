@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, follow"><link rel="canonical" href="https://josephhuckabee.github.io/404.html"><meta property="og:title" content="Page Not Found | Historical Glass Museum"><meta property="og:description" content="Page not found on the Historical Glass Museum website."><meta property="og:type" content="website"><meta property="og:url" content="https://josephhuckabee.github.io/404.html"><meta property="og:image" content="https://josephhuckabee.github.io/images/glass_museum.jpeg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Page Not Found | Historical Glass Museum"><meta name="twitter:description" content="Page not found on the Historical Glass Museum website."><meta name="twitter:image" content="https://josephhuckabee.github.io/images/glass_museum.jpeg"><script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"Page Not Found | Historical Glass Museum","description":"Page not found on the Historical Glass Museum website.","url":"https://josephhuckabee.github.io/404.html","isPartOf":{"@type":"WebSite","name":"Historical Glass Museum","url":"https://josephhuckabee.github.io/"},"about":{"@type":"Museum","name":"Historical Glass Museum Foundation"}}]</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, follow"><link rel="canonical" href="https://josephhuckabee.github.io/historic_glass_museum_foundation/404.html"><meta property="og:title" content="Page Not Found | Historical Glass Museum"><meta property="og:description" content="Page not found on the Historical Glass Museum website."><meta property="og:type" content="website"><meta property="og:url" content="https://josephhuckabee.github.io/historic_glass_museum_foundation/404.html"><meta property="og:image" content="https://josephhuckabee.github.io/historic_glass_museum_foundation/images/new_museum_photo.jpeg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Page Not Found | Historical Glass Museum"><meta name="twitter:description" content="Page not found on the Historical Glass Museum website."><meta name="twitter:image" content="https://josephhuckabee.github.io/historic_glass_museum_foundation/images/new_museum_photo.jpeg"><script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","name":"Page Not Found | Historical Glass Museum","description":"Page not found on the Historical Glass Museum website.","url":"https://josephhuckabee.github.io/historic_glass_museum_foundation/404.html","isPartOf":{"@type":"WebSite","name":"Historical Glass Museum","url":"https://josephhuckabee.github.io/historic_glass_museum_foundation/"},"about":{"@type":"Museum","name":"Historical Glass Museum Foundation"}}]</script>
     <meta name="description" content="Page not found on the Historical Glass Museum website.">
     <title>Page Not Found | Historical Glass Museum</title>
     <script>
@@ -17,16 +17,42 @@
       })();
     </script>
     <style>
+      :root {
+        color-scheme: light;
+        --fallback-bg: #f3eadb;
+        --fallback-main: #fbf7ef;
+        --fallback-ink: #202326;
+        --fallback-header: #176fae;
+        --fallback-button: #0f3f66;
+        --fallback-button-text: #ffffff;
+        --fallback-secondary: #8a2f27;
+        --fallback-header-text: #ffffff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --fallback-bg: #101416;
+          --fallback-main: #171b1d;
+          --fallback-ink: #f4f1ea;
+          --fallback-header: #0d5b87;
+          --fallback-button: #8acbf0;
+          --fallback-button-text: #07131a;
+          --fallback-secondary: #a93f38;
+          --fallback-header-text: #ffffff;
+        }
+      }
+
       body {
         margin: 0;
         min-width: 320px;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: #202326;
-        background: #f3eadb;
+        color: var(--fallback-ink);
+        background: var(--fallback-bg);
       }
 
       .site-header {
-        background: #176fae;
+        background: var(--fallback-header);
       }
 
       .header-inner,
@@ -38,7 +64,7 @@
       }
 
       main {
-        background: #fbf7ef;
+        background: var(--fallback-main);
       }
 
       .brand {
@@ -61,8 +87,8 @@
 
       .site-nav a,
       .button {
-        color: #ffffff;
-        font-weight: 750;
+        color: var(--fallback-header-text);
+        font-weight: 700;
       }
 
       .button {
@@ -72,12 +98,14 @@
         justify-content: center;
         padding: 0.65rem 1rem;
         border-radius: 0.3rem;
-        background: #0f3f66;
+        background: var(--fallback-button);
+        color: var(--fallback-button-text);
         text-decoration: none;
       }
 
       .button-secondary {
-        background: #8a2f27;
+        background: var(--fallback-secondary);
+        color: var(--fallback-header-text);
       }
 
       .button-row {
@@ -90,8 +118,8 @@
         display: none;
       }
     </style>
-    <link rel="stylesheet" href="styles.css?v=20260524">
-    <script src="script.js?v=20260524" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260926">
+    <script src="script.js?v=20260926" defer></script>
   </head>
   <body class="not-found-page">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -133,8 +161,7 @@
 
     <footer class="site-footer">
       <p>&copy; 2026 Historical Glass Museum Foundation. All rights reserved.</p>
-      <p><a href="privacy.html">Privacy & Legal</a></p>
-      <p class="site-credit">Website by Joseph Huckabee</p>
+      <p><a href="privacy.html">Privacy &amp; Legal</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
     </footer>
   </body>
 </html>
