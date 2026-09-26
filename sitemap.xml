@@ -14,7 +14,13 @@
   </url>
   <url>
     <loc>https://josephhuckabee.github.io/historic_glass_museum_foundation/support-us.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://josephhuckabee.github.io/historic_glass_museum_foundation/donations.html</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -32,7 +38,7 @@
   </url>
   <url>
     <loc>https://josephhuckabee.github.io/historic_glass_museum_foundation/gallery.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

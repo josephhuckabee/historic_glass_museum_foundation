@@ -37,7 +37,9 @@
     const honeypot = form?.querySelector('[name="_gotcha"]');
     const submitButton = form?.querySelector('button[type="submit"]');
     const turnstileSlot = form?.querySelector("[data-turnstile-slot]");
-    if (!form || !status || !startedAt || !honeypot || !submitButton || !turnstileSlot) return;
+    const messageField = form?.querySelector('[name="message"]');
+    const messageCount = form?.querySelector("[data-message-count]");
+    if (!form || !status || !startedAt || !honeypot || !submitButton || !turnstileSlot || !messageField || !messageCount) return;
 
     const turnstileSitekey = form.dataset.turnstileSitekey;
 
@@ -67,10 +69,20 @@
       status.focus();
     };
 
+    const updateMessageCount = () => {
+      if (messageField.value.length > 500) {
+        messageField.value = messageField.value.slice(0, 500);
+      }
+      messageCount.textContent = String(messageField.value.length);
+    };
+
     setStartedAt();
+    updateMessageCount();
+    messageField.addEventListener("input", updateMessageCount);
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      updateMessageCount();
 
       if (!form.checkValidity()) {
         form.reportValidity();
@@ -80,6 +92,7 @@
       if (honeypot.value) {
         form.reset();
         setStartedAt();
+        updateMessageCount();
         showStatus("Thank you. Your message has been received.", "success");
         return;
       }
@@ -121,6 +134,7 @@
 
         form.reset();
         setStartedAt();
+        updateMessageCount();
         window.turnstile?.reset();
         showStatus("Thank you. Your message has been sent.", "success");
       } catch {
@@ -156,80 +170,220 @@
     });
   };
 
-  const initMembershipModal = () => {
-    const supportHref = "support-us.html";
+  const initGalleryLightbox = () => {
+    const triggers = [...document.querySelectorAll("[data-gallery-src]")];
+    const dialog = document.querySelector("[data-gallery-lightbox]");
+    const image = dialog?.querySelector("[data-gallery-image]");
+    const caption = dialog?.querySelector("[data-gallery-lightbox-caption]");
+    const closeButton = dialog?.querySelector("[data-gallery-close]");
+    if (!triggers.length || !dialog || !image || !caption || !closeButton) return;
 
-    document.body.insertAdjacentHTML(
-      "beforeend",
-      `<button class="membership-float" type="button" aria-haspopup="dialog" aria-controls="membership-modal">
-        Membership
-      </button>
-      <div class="membership-modal" id="membership-modal" role="dialog" aria-modal="true" aria-labelledby="membership-title" hidden>
-        <div class="membership-modal__panel">
-          <button class="membership-modal__close" type="button" aria-label="Close membership options">×</button>
-          <p class="eyebrow">Support the Museum</p>
-          <h2 id="membership-title">Membership Options</h2>
-          <ul class="membership-options">
-            <li><strong>Individual:</strong> $30 per year</li>
-            <li><strong>Second household member:</strong> add $5</li>
-            <li><strong>Club or organization:</strong> $30 per year</li>
-            <li><strong>Business:</strong> $50 per year</li>
-            <li><strong>Full-time student:</strong> $10 per year</li>
-            <li><strong>Lifetime:</strong> $1,000 one-time donation</li>
-          </ul>
-          <p>Membership includes free admission, a Gift Shop discount, and the museum newsletter.</p>
-          <a class="button" href="${supportHref}">More Support Details</a>
-        </div>
-      </div>`
-    );
-
-    const trigger = document.querySelector(".membership-float");
-    const modal = document.querySelector("#membership-modal");
-    const panel = modal?.querySelector(".membership-modal__panel");
-    const closeButton = modal?.querySelector(".membership-modal__close");
-    if (!trigger || !modal || !panel || !closeButton) return;
-
-    const open = () => {
-      modal.hidden = false;
-      trigger.setAttribute("aria-expanded", "true");
-      closeButton.focus();
-    };
+    let activeTrigger = null;
 
     const close = () => {
-      modal.hidden = true;
-      trigger.setAttribute("aria-expanded", "false");
-      trigger.focus();
+      if (dialog.open) dialog.close();
     };
 
-    trigger.setAttribute("aria-expanded", "false");
-    trigger.addEventListener("click", open);
-    closeButton.addEventListener("click", close);
-    modal.addEventListener("click", (event) => {
-      if (!panel.contains(event.target)) close();
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const thumbnail = trigger.querySelector("img");
+        activeTrigger = trigger;
+        image.src = trigger.dataset.gallerySrc;
+        image.alt = thumbnail?.alt || "Enlarged museum collection photograph";
+        caption.textContent = trigger.dataset.galleryCaption || "";
+        dialog.showModal();
+        closeButton.focus();
+      });
     });
-    document.addEventListener("keydown", (event) => {
-      if (modal.hidden) return;
 
-      if (event.key === "Escape") {
-        close();
+    closeButton.addEventListener("click", close);
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) close();
+    });
+    dialog.addEventListener("close", () => {
+      image.removeAttribute("src");
+      activeTrigger?.focus();
+      activeTrigger = null;
+    });
+  };
+
+  const initMembershipForm = () => {
+    const form = document.querySelector("[data-membership-form]");
+    const status = form?.querySelector("[data-membership-status]");
+    const confirmation = document.querySelector("[data-membership-confirmation]");
+    const setupNotice = document.querySelector("[data-membership-setup-notice]");
+    const dateField = form?.querySelector('[name="date"]');
+    const levels = [...(form?.querySelectorAll('[name="membership_level"]') || [])];
+    const householdMember = form?.querySelector('[name="second_household_member"]');
+    const donationField = form?.querySelector('[name="additional_donation"]');
+    const amountField = form?.querySelector("[data-membership-amount-field]");
+    const householdFeeField = form?.querySelector("[data-household-fee-field]");
+    const totalDueField = form?.querySelector("[data-total-due-field]");
+    const startedAt = form?.querySelector("[data-membership-started-at]");
+    const honeypot = form?.querySelector('[name="_gotcha"]');
+    const submitButton = form?.querySelector("[data-membership-submit]");
+    const turnstileSlot = form?.querySelector("[data-membership-turnstile]");
+    if (
+      !form || !status || !confirmation || !dateField || !levels.length ||
+      !householdMember || !donationField || !amountField || !householdFeeField ||
+      !totalDueField || !startedAt || !honeypot || !submitButton || !turnstileSlot
+    ) return;
+
+    const turnstileSitekey = form.dataset.turnstileSitekey;
+    const currency = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+
+    if (setupNotice && form.dataset.membershipConfigured === "true") {
+      setupNotice.hidden = true;
+    }
+
+    if (turnstileSitekey) {
+      turnstileSlot.hidden = false;
+      turnstileSlot.classList.add("cf-turnstile");
+      turnstileSlot.dataset.sitekey = turnstileSitekey;
+      turnstileSlot.dataset.size = "flexible";
+      turnstileSlot.dataset.appearance = "interaction-only";
+      turnstileSlot.dataset.theme = "auto";
+
+      const script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+      script.async = true;
+      script.defer = true;
+      document.head.append(script);
+    }
+
+    const setDate = () => {
+      if (dateField.value) return;
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, "0");
+      const day = String(today.getDate()).padStart(2, "0");
+      dateField.value = `${year}-${month}-${day}`;
+    };
+
+    const setStartedAt = () => {
+      startedAt.value = String(Date.now());
+    };
+
+    const setText = (selector, value, container = form) => {
+      const element = container.querySelector(selector);
+      if (element) element.textContent = value;
+    };
+
+    const updateTotals = () => {
+      const selectedLevel = levels.find((level) => level.checked);
+      const isIndividual = selectedLevel?.value === "Individual Membership";
+
+      householdMember.disabled = !isIndividual;
+      if (!isIndividual) householdMember.checked = false;
+
+      const membershipAmount = Number(selectedLevel?.dataset.membershipAmount || 0);
+      const householdFee = householdMember.checked ? Number(householdMember.dataset.householdFee || 0) : 0;
+      const enteredDonation = Number(donationField.value);
+      const donationAmount = Number.isFinite(enteredDonation) && enteredDonation > 0 ? enteredDonation : 0;
+      const total = membershipAmount + householdFee + donationAmount;
+      const levelName = selectedLevel?.value || "Choose a membership level";
+
+      amountField.value = membershipAmount.toFixed(2);
+      householdFeeField.value = householdFee.toFixed(2);
+      totalDueField.value = total.toFixed(2);
+
+      setText("[data-total-level]", levelName);
+      setText("[data-total-membership]", currency.format(membershipAmount));
+      setText("[data-total-household]", currency.format(householdFee));
+      setText("[data-total-donation]", currency.format(donationAmount));
+      setText("[data-total-grand]", currency.format(total));
+
+      return { levelName, membershipAmount, householdFee, donationAmount, total };
+    };
+
+    const showStatus = (message, state) => {
+      status.textContent = message;
+      status.dataset.state = state;
+      status.hidden = false;
+      status.focus();
+    };
+
+    setDate();
+    setStartedAt();
+    updateTotals();
+    submitButton.disabled = false;
+
+    levels.forEach((level) => level.addEventListener("change", updateTotals));
+    householdMember.addEventListener("change", updateTotals);
+    donationField.addEventListener("input", updateTotals);
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const totals = updateTotals();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
         return;
       }
 
-      if (event.key !== "Tab") return;
+      if (honeypot.value) {
+        showStatus("We could not submit this application. Please try again or call the Museum at (909) 798-0868.", "error");
+        return;
+      }
 
-      const focusable = [...panel.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')];
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (!first || !last) return;
+      const endpoint = form.getAttribute("action");
+      if (form.dataset.membershipConfigured !== "true" || !endpoint) {
+        showStatus("Online membership submission is not connected yet. Your application was not sent. Please use the printable application or call the Museum at (909) 798-0868.", "error");
+        return;
+      }
 
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
+      if (!turnstileSitekey) {
+        showStatus("Online membership security has not been configured yet. Your application was not sent. Please call the Museum at (909) 798-0868.", "error");
+        return;
+      }
+
+      if (Date.now() - Number(startedAt.value) < 3000) {
+        showStatus("Please wait a moment, then submit your application again.", "error");
+        return;
+      }
+
+      const turnstileResponse = form.querySelector('[name="cf-turnstile-response"]');
+      if (!turnstileResponse?.value) {
+        showStatus("Please complete the security check, then submit your application again.", "error");
+        return;
+      }
+
+      const defaultButtonText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) throw new Error("Form provider rejected the submission.");
+
+        setText("[data-confirm-level]", totals.levelName, confirmation);
+        setText("[data-confirm-membership]", currency.format(totals.membershipAmount), confirmation);
+        setText("[data-confirm-household]", currency.format(totals.householdFee), confirmation);
+        setText("[data-confirm-donation]", currency.format(totals.donationAmount), confirmation);
+        setText("[data-confirm-total]", currency.format(totals.total), confirmation);
+
+        form.reset();
+        setDate();
+        setStartedAt();
+        updateTotals();
+        window.turnstile?.reset();
+        form.hidden = true;
+        confirmation.hidden = false;
+        confirmation.focus();
+      } catch {
+        window.turnstile?.reset();
+        showStatus("We could not submit your membership application. Nothing was sent. Please try again or call the Museum at (909) 798-0868.", "error");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = defaultButtonText;
       }
     });
+
   };
 
   const initHashDetails = () => {
@@ -252,8 +406,9 @@
     initNav();
     initContactForm();
     initNewsletterViewer();
+    initGalleryLightbox();
+    initMembershipForm();
     initHashDetails();
-    initMembershipModal();
   };
 
   if (document.readyState === "loading") {
