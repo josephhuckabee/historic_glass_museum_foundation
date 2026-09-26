@@ -386,29 +386,12 @@
 
   };
 
-  const initHashDetails = () => {
-    const openHashedDetails = () => {
-      if (!window.location.hash) return;
-      let target;
-      try {
-        target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
-      } catch {
-        return;
-      }
-      if (target?.matches("details")) target.open = true;
-    };
-
-    openHashedDetails();
-    window.addEventListener("hashchange", openHashedDetails);
-  };
-
   const init = () => {
     initNav();
     initContactForm();
     initNewsletterViewer();
     initGalleryLightbox();
     initMembershipForm();
-    initHashDetails();
   };
 
   if (document.readyState === "loading") {
