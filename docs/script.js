@@ -135,7 +135,12 @@
   const initHashDetails = () => {
     const openHashedDetails = () => {
       if (!window.location.hash) return;
-      const target = document.querySelector(window.location.hash);
+      let target;
+      try {
+        target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+      } catch {
+        return;
+      }
       if (target?.matches("details")) target.open = true;
     };
 

@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+
 :root {
   color-scheme: light;
+  --font-serif: "Libre Baskerville", Georgia, "Times New Roman", serif;
   --blue: #176fae;
   --blue-dark: #0f3f66;
   --blue-deep: #0a2f4f;
@@ -33,9 +36,9 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
   color: var(--ink);
   background:
     linear-gradient(90deg, rgba(23, 111, 174, 0.06), transparent 18%, transparent 82%, rgba(165, 117, 24, 0.07)),
@@ -130,7 +133,7 @@ a:hover {
   background: #ffffff;
   color: var(--blue-deep);
   font: inherit;
-  font-weight: 750;
+  font-weight: 700;
 }
 
 .nav-toggle-bars,
@@ -169,7 +172,7 @@ a:hover {
   padding: 0.65rem 0.75rem;
   border-radius: 0;
   color: #ffffff;
-  font-weight: 750;
+  font-weight: 700;
   text-align: center;
   text-decoration: none;
   transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
@@ -206,13 +209,13 @@ main {
 
 .site-footer a {
   color: var(--blue-dark);
-  font-weight: 750;
+  font-weight: 700;
 }
 
 .site-credit {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 h1,
@@ -237,12 +240,12 @@ h4 {
 h1 {
   max-width: 14ch;
   font-size: 2.75rem;
-  font-weight: 850;
+  font-weight: 700;
 }
 
 h2 {
   font-size: 1.7rem;
-  font-weight: 850;
+  font-weight: 700;
 }
 
 h3 {
@@ -286,6 +289,7 @@ address {
   width: 100%;
   aspect-ratio: 1.35 / 1;
   object-fit: cover;
+  object-position: center 42%;
   border-radius: 0;
   border: 1px solid rgba(10, 47, 79, 0.18);
   box-shadow: var(--shadow-soft);
@@ -305,8 +309,8 @@ address {
   margin-bottom: 0.45rem;
   color: var(--gold);
   font-size: 0.76rem;
-  font-weight: 850;
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -328,7 +332,7 @@ address {
   background: var(--ink);
   color: #ffffff;
   box-shadow: 4px 4px 0 var(--gold-soft);
-  font-weight: 850;
+  font-weight: 700;
   text-decoration: none;
   transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
@@ -417,7 +421,7 @@ address {
   background: var(--blue-deep);
   color: #ffffff;
   font-size: 0.82rem;
-  font-weight: 850;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -453,6 +457,13 @@ address {
   box-shadow: var(--shadow-soft);
 }
 
+.contact-notice {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(154, 47, 40, 0.28);
+  border-left: 0.35rem solid var(--red);
+  background: #fff8ef;
+}
+
 .map-embed {
   width: 100%;
   min-height: 17rem;
@@ -477,7 +488,7 @@ address {
 .video-tours figcaption {
   margin-top: 0.45rem;
   color: var(--muted);
-  font-weight: 750;
+  font-weight: 700;
 }
 
 .people-list ul,
@@ -520,7 +531,7 @@ address {
   min-height: 4rem;
   padding: 0.8rem 1rem;
   cursor: pointer;
-  font-weight: 850;
+  font-weight: 700;
   list-style: none;
 }
 
@@ -559,7 +570,7 @@ address {
   background: var(--white);
   color: var(--ink);
   font: inherit;
-  font-weight: 750;
+  font-weight: 700;
   text-align: left;
   padding: 0.55rem 0.7rem;
 }
@@ -577,22 +588,22 @@ address {
 }
 
 .membership-float {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
   z-index: 30;
   display: inline-flex;
+  position: static;
   align-items: center;
   justify-content: center;
+  width: fit-content;
   min-height: 3rem;
+  margin: 0 auto 1.5rem;
   padding: 0.75rem 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.82);
+  border: 2px solid var(--red);
   border-radius: 999px;
   background: var(--red);
   color: #ffffff;
-  box-shadow: 0 14px 30px rgba(16, 33, 48, 0.28);
+  box-shadow: none;
   font: inherit;
-  font-weight: 850;
+  font-weight: 700;
 }
 
 .membership-float:hover,
@@ -644,6 +655,18 @@ address {
   display: grid;
   gap: 0.45rem;
   padding-left: 1.2rem;
+}
+
+@media (max-width: 699px) {
+  .button-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media (min-width: 700px) {
