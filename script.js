@@ -386,12 +386,49 @@
 
   };
 
+  const initSupportAccordions = () => {
+    const membership = document.querySelector("details#membership");
+    const accordion = membership?.closest(".accordion");
+    if (!membership || !accordion) return;
+
+    const items = [...accordion.querySelectorAll("details.accordion-item")];
+
+    const openMembership = () => {
+      items.forEach((item) => {
+        item.open = item === membership;
+      });
+      window.requestAnimationFrame(() => {
+        membership.scrollIntoView({ block: "start" });
+        const headerHeight = document.querySelector(".site-header")?.getBoundingClientRect().height || 0;
+        window.scrollBy({ top: -(headerHeight + 16), left: 0, behavior: "auto" });
+      });
+    };
+
+    const applyRoute = () => {
+      if (window.location.hash === "#membership") {
+        openMembership();
+        return;
+      }
+      items.forEach((item) => {
+        item.open = false;
+      });
+    };
+
+    document.querySelector(".membership-floating-cta")?.addEventListener("click", () => {
+      openMembership();
+    });
+    window.addEventListener("hashchange", applyRoute);
+    window.addEventListener("pageshow", applyRoute);
+    applyRoute();
+  };
+
   const init = () => {
     initNav();
     initContactForm();
     initNewsletterViewer();
     initGalleryLightbox();
     initMembershipForm();
+    initSupportAccordions();
   };
 
   if (document.readyState === "loading") {
