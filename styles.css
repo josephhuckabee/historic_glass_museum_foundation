@@ -877,177 +877,14 @@ address {
   background: var(--blue-quiet);
 }
 
-.membership-payment-note {
-  margin-bottom: 0;
-  padding: 0.85rem 1rem;
-  border-left: 0.4rem solid var(--gold);
-  background: var(--paper-soft);
-}
-
-.membership-application {
-  display: grid;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
-
-.membership-application textarea {
-  min-height: 7rem;
-}
-
-.form-section {
-  min-width: 0;
-  margin: 0;
-  padding: 1rem;
-  border: 2px solid var(--border);
-}
-
-.form-section legend {
-  padding: 0 0.45rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.form-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.field-label {
-  font-size: 1.08rem;
-  font-weight: 700;
-}
-
-.choice-row,
-.choice-list {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.choice-row label,
-.choice-list label {
-  display: grid;
-  grid-template-columns: 1.5rem minmax(0, 1fr);
-  gap: 0.65rem;
-  align-items: start;
-  min-height: 2.75rem;
-  padding: 0.55rem;
-  border: 1px solid var(--border);
-  background: var(--white);
-  cursor: pointer;
-}
-
-.choice-row input,
-.choice-list input {
-  width: 1.35rem;
-  height: 1.35rem;
-  margin: 0.2rem 0 0;
-  accent-color: var(--blue-dark);
-}
-
-.choice-list .choice-subitem {
-  margin-left: 1.25rem;
-  border-left: 0.3rem solid var(--gold);
-}
-
-.choice-list input:disabled {
-  cursor: not-allowed;
-  opacity: 0.55;
-}
-
-.choice-help {
-  margin-left: 1.25rem;
-}
-
-.monetary-fields {
-  margin-top: 1rem;
-}
-
-.monetary-fields .form-field {
-  max-width: 30rem;
-}
-
-.money-input {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.5rem;
-  align-items: center;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.application-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.membership-submit {
-  min-width: min(100%, 22rem);
-  min-height: 3.5rem;
-  font-size: 1.08rem;
-}
-
-.membership-total {
-  margin-top: 1.25rem;
-  padding: 1rem;
-  border: 2px solid var(--blue-dark);
-  background: var(--blue-quiet);
-}
-
-.membership-total h3 {
-  margin-bottom: 0.75rem;
-  font-size: 1.35rem;
-}
-
-.membership-total dl,
-.membership-confirmation__amounts {
-  display: grid;
-  gap: 0;
-  margin: 0;
-}
-
-.membership-total dl > div,
-.membership-confirmation__amounts > div {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1rem;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.membership-total dt,
-.membership-confirmation__amounts dt {
-  font-weight: 700;
-}
-
-.membership-total dd,
-.membership-confirmation__amounts dd {
-  margin: 0;
-  text-align: right;
-}
-
-.membership-total__grand {
-  margin-top: 0.35rem;
-  border-bottom: 0 !important;
-  font-size: 1.12rem;
-  font-weight: 700;
-}
-
-.membership-confirmation {
-  margin-top: 1.5rem;
-  padding: 1.25rem;
-  border: 3px solid var(--success-border);
-  background: var(--success-bg);
-}
-
-.membership-confirmation[hidden] {
-  display: none;
-}
-
-.membership-confirmation address {
+.application-notice address {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 2px solid var(--success-border);
+  border-top: 2px solid var(--notice-border);
+}
+
+.membership-levels {
+  margin-top: 1.25rem;
 }
 
 .video-tours figure {
@@ -1200,14 +1037,6 @@ address {
     text-align: center;
   }
 
-  .application-actions {
-    display: grid;
-  }
-
-  .choice-list .choice-subitem {
-    margin-left: 0.5rem;
-  }
-
   .gallery-lightbox {
     width: calc(100vw - 1rem);
   }
@@ -1306,18 +1135,6 @@ address {
 
   .gallery-grid,
   .video-tours {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .form-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .form-field-wide {
-    grid-column: 1 / -1;
-  }
-
-  .choice-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1456,29 +1273,11 @@ address {
   }
 
   body.support-page #membership > summary,
-  body.support-page .membership-overview,
-  body.support-page .application-actions,
-  body.support-page .form-status {
+  body.support-page .membership-overview {
     display: none !important;
   }
 
-  body.support-page .accordion-panel,
-  body.support-page .form-section {
+  body.support-page .accordion-panel {
     padding: 0.35rem;
-  }
-
-  body.support-page .membership-application {
-    gap: 0.5rem;
-    margin: 0;
-  }
-
-  body.support-page input,
-  body.support-page textarea,
-  body.support-page select,
-  body.support-page .choice-list label,
-  body.support-page .choice-row label {
-    border-color: #000000;
-    background: #ffffff;
-    color: #000000;
   }
 }

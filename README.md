@@ -17,7 +17,7 @@ This is a simple static website. There is no build step.
 - `robots.txt` - crawler instructions and sitemap location
 - `sitemap.xml` - search engine sitemap
 - `styles.css` - all site styles
-- `script.js` - mobile menu, newsletter viewer, forms, gallery lightbox, and membership calculations
+- `script.js` - mobile menu, newsletter viewer, contact form, gallery lightbox, and support accordion behavior
 - `Images/` - museum photos grouped by building, collection gallery, people, Gift Shop, and icons
 - `fonts/` - locally hosted website font
 
@@ -42,18 +42,11 @@ The form is intentionally disabled until its external services are configured:
 
 Never put the Turnstile secret key or email credentials in this repository.
 
-## Membership Form Setup
+## Membership Applications
 
-The membership application calculates the check amount but does not collect payment. It is intentionally disabled until secure submission is configured:
+Membership applications are handled by printable PDF only. Visitors download the membership application from `support-us.html`, complete it, and mail it with a check to the Foundation.
 
-1. Create a separate Formspree form and verify `HistoricalGlassMuseum4@gmail.com` as its target email.
-2. Restrict that Formspree project to the production website domain.
-3. Create or reuse a Cloudflare Turnstile widget for the production domain in Managed mode.
-4. Store the Turnstile secret key only in Formspree's CAPTCHA settings.
-5. In `support-us.html`, add the public Turnstile site key to `data-turnstile-sitekey`, add the Formspree endpoint to the form's `action`, and change `data-membership-configured` to `true`.
-6. Test accepted, invalid, spam, duplicate, and provider-error submissions. Confirm that the mailing instructions appear only after Formspree accepts the application.
-
-No membership payment service needs to be configured. Applicants submit online and then mail a check. The printable PDF remains available as a secondary option, and the separate Museum donation Donorbox link is unchanged.
+Membership dues should be mailed by check with the printable application. The separate Museum donation Donorbox link is unchanged.
 
 ## Email Operations
 
